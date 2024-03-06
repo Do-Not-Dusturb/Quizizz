@@ -1,0 +1,53 @@
+
+<html>
+  <head>
+    <title>503 Service Temporarily Unavailable</title>
+    <style>
+      #footer {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body bgcolor="white">
+  <center>
+    <h1>503 Service Temporarily Unavailable</h1>
+  </center>
+
+  <div id="footer"></div>
+
+  <script>
+
+    function setCookie(cname, cvalue, exMins) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exMins*60*1000));
+        var expires = "expires="+d.toUTCString();  
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    var cookies = document.cookie;
+    var footer = document.getElementById('footer');
+    if (document.cookie.indexOf('QUIZIZZ_EXP_LEVEL=staging') >= 0) {
+      var message = document.createElement('div');
+      message.innerHTML = "You appear to be on wrong envrionment";
+      footer.appendChild(message);
+
+      var button = document.createElement('button');
+      button.innerHTML = 'Click to refresh';
+      footer.appendChild(button);
+
+      button.addEventListener('click', function () {
+        setCookie('QUIZIZZ_EXP_LEVEL', '', 0) // this will delete the cookie.
+        window.location = '/admin';
+      });
+    }
+
+  </script>
+
+  </body>
+  </html>
+  <!-- a padding to disable MSIE and Chrome friendly error page -->
+  <!-- a padding to disable MSIE and Chrome friendly error page -->
+  <!-- a padding to disable MSIE and Chrome friendly error page -->
+  <!-- a padding to disable MSIE and Chrome friendly error page -->
+  <!-- a padding to disable MSIE and Chrome friendly error page -->
+  <!-- a padding to disable MSIE and Chrome friendly error page -->
